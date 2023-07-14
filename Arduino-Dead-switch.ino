@@ -1,4 +1,4 @@
-void(* Stop) (void) = 0; //Function at adress 0, used to restart the Arduino
+void(* Stop) (void) = 0; //Function at address 0, used to restart the Arduino
 
 #pragma region Variables
 /*Used pins*/
@@ -48,6 +48,7 @@ void loop() {
   if(running && ready)                        CheckButton();
   else if(!digitalRead(BUTTON_PIN) && !ready) ready = true;
   else if( digitalRead(BUTTON_PIN) &&  ready) running = true;
+  delay(10);
 }
 
 void BlinkLed(int interval) {
